@@ -20,15 +20,15 @@ const Section: React.FC<SectionProps> = ({ title, subtitle, children, bg = "" })
         className="max-w-7xl w-full mx-auto"
       >
         <div className="text-center mb-24">
-          <h2 className="text-5xl md:text-7xl font-black mb-8 tracking-tighter uppercase leading-none text-white italic">
+          <h2 className="text-5xl md:text-8xl font-black mb-8 tracking-tighter uppercase leading-none text-white italic">
             {title}
           </h2>
           {subtitle && (
-            <p className="text-2xl md:text-3xl text-slate-200 font-light max-w-3xl mx-auto italic leading-relaxed">
+            <p className="text-2xl md:text-3xl text-slate-400 font-light max-w-3xl mx-auto italic leading-relaxed">
               {subtitle}
             </p>
           )}
-          <div className="w-24 h-1.5 bg-cyan-500 mx-auto mt-12 shadow-[0_0_20px_rgba(6,182,212,1)] rounded-full"></div>
+          <div className="w-24 h-2 bg-cyan-600 mx-auto mt-14 rounded-full shadow-[0_0_20px_#06b6d4]"></div>
         </div>
         
         {children}

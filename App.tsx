@@ -1,13 +1,13 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { PERSONAL_INFO, SERVICES, TESTIMONIALS, FAQS, VALUE_PROPS } from './constants';
+import { PERSONAL_INFO, SERVICES, TESTIMONIALS, FAQS } from './constants';
 import { Icons, Graphics } from './constants';
 import Section from './components/Section';
 
 const App: React.FC = () => {
   return (
-    <div className="w-full min-h-screen font-['Roboto'] selection:bg-cyan-500 selection:text-white">
+    <div className="w-full min-h-screen font-['Roboto'] selection:bg-cyan-500 selection:text-white bg-transparent">
       
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden">
@@ -18,20 +18,20 @@ const App: React.FC = () => {
           className="z-10"
         >
           <span className="px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-[10px] font-black tracking-[0.4em] uppercase mb-8 inline-block">
-            Consultoría Estratégica
+            Estrategia de Negocio & IA
           </span>
           <h1 className="text-6xl md:text-9xl font-black italic leading-[0.85] tracking-tighter uppercase mb-8 bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-slate-500">
             Transformación <br/><span className="text-cyan-500">Inteligente</span>
           </h1>
-          <p className="text-xl md:text-3xl font-light text-slate-300 max-w-3xl mx-auto italic mb-12">
-            Automatizamos su negocio para que usted recupere su tiempo y multiplique sus beneficios.
+          <p className="text-xl md:text-3xl font-light text-slate-300 max-w-3xl mx-auto italic mb-12 leading-relaxed">
+            Eliminamos las tareas manuales de su negocio para que usted multiplique su libertad y sus beneficios.
           </p>
           <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
             <a href="#contacto" className="bg-white text-black font-black px-10 py-5 rounded-2xl uppercase tracking-widest hover:bg-cyan-500 hover:text-white transition-all transform hover:scale-105 active:scale-95">
-              Diagnóstico Gratis
+              Solicitar Diagnóstico
             </a>
-            <div className="text-slate-500 font-bold uppercase tracking-widest text-xs">
-              Por {PERSONAL_INFO.name}
+            <div className="text-slate-500 font-bold uppercase tracking-widest text-[10px]">
+              Consultoría por {PERSONAL_INFO.name}
             </div>
           </div>
         </motion.div>
@@ -45,13 +45,13 @@ const App: React.FC = () => {
       </section>
 
       {/* Problema Section */}
-      <Section title="¿Su negocio pierde dinero?" subtitle="Identificamos las fugas de ingresos que la mayoría de dueños ignora.">
+      <Section title="¿Su negocio pierde dinero?" subtitle="Identificamos las grietas por donde se escapan sus clientes potenciales.">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
           {[
-            { t: "Llamadas no atendidas", d: "Cada llamada que no responde es una venta directa para su competencia.", icon: "📵" },
-            { t: "WhatsApp saturado", d: "Responder manualmente las mismas dudas roba horas de productividad cada día.", icon: "💬" },
-            { t: "Agenda ineficiente", d: "Huecos vacíos en su calendario por falta de un sistema de recordatorios.", icon: "📅" },
-            { t: "Gestión Administrativa", d: "Facturas y pedidos que consumen su tiempo personal.", icon: "⚙️" }
+            { t: "Llamadas no atendidas", d: "Cada llamada que no responde durante un servicio es un cliente que llama al negocio de al lado.", icon: "📵" },
+            { t: "Gestión de WhatsApp", d: "Perder 2 horas al día respondiendo precios y horarios es una pérdida de tiempo inaceptable.", icon: "💬" },
+            { t: "Agenda vacía", d: "No tener un sistema automático de recordatorios provoca que los clientes olviden sus citas.", icon: "📅" },
+            { t: "Tareas Repetitivas", d: "La burocracia y los pedidos manuales le quitan tiempo de lo que realmente importa: su familia.", icon: "⚙️" }
           ].map((item, i) => (
             <motion.div 
               key={i}
@@ -70,16 +70,16 @@ const App: React.FC = () => {
       </Section>
 
       {/* Soluciones Section */}
-      <Section title="Soluciones Pro" subtitle="Implementamos tecnología de última generación diseñada para PYMES." bg="bg-slate-950/50">
+      <Section title="Soluciones Pro" subtitle="Tecnología de nivel empresarial adaptada a la realidad de su negocio local." bg="bg-slate-950/50">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {SERVICES.map((service, i) => (
             <motion.div 
               key={i}
               whileHover={{ y: -10 }}
-              className="p-10 bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-800 rounded-[3rem] flex items-start gap-8"
+              className="p-10 bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-800 rounded-[3rem] flex flex-col md:flex-row items-center md:items-start gap-8"
             >
               <div className="text-6xl">{service.icon}</div>
-              <div>
+              <div className="text-center md:text-left">
                 <h3 className="text-2xl font-black italic uppercase text-white mb-4 leading-tight">{service.title}</h3>
                 <p className="text-slate-400 font-light leading-relaxed">{service.desc}</p>
               </div>
@@ -89,11 +89,11 @@ const App: React.FC = () => {
       </Section>
 
       {/* Testimonios */}
-      <Section title="Casos Reales" subtitle="Dueños de negocios que ya han dado el salto al futuro.">
+      <Section title="Resultados Reales" subtitle="Historias de éxito de negocios que ya no miran atrás.">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {TESTIMONIALS.map((t, i) => (
-            <div key={i} className="p-8 bg-slate-900/30 border border-slate-800 rounded-[2rem] flex flex-col items-center text-center">
-              <img src={t.avatar} alt={t.name} className="w-20 h-20 rounded-full border-2 border-cyan-500 mb-6 grayscale hover:grayscale-0 transition-all" />
+            <div key={i} className="p-8 bg-slate-900/30 border border-slate-800 rounded-[2rem] flex flex-col items-center text-center group hover:bg-slate-900/50 transition-all">
+              <img src={t.avatar} alt={t.name} className="w-20 h-20 rounded-full border-2 border-cyan-500 mb-6 transition-all" />
               <p className="text-slate-300 italic mb-8 font-light leading-relaxed">"{t.quote}"</p>
               <h4 className="font-black text-white uppercase text-sm tracking-[0.2em]">{t.name}</h4>
               <span className="text-cyan-500 text-[10px] font-bold uppercase mt-1">{t.business}</span>
@@ -103,7 +103,7 @@ const App: React.FC = () => {
       </Section>
 
       {/* FAQ */}
-      <Section title="Dudas Frecuentes" bg="bg-slate-950/30">
+      <Section title="Preguntas" bg="bg-slate-950/30">
         <div className="max-w-4xl mx-auto space-y-6">
           {FAQS.map((faq, i) => (
             <details key={i} className="group bg-slate-900/50 border border-slate-800 rounded-2xl overflow-hidden">
@@ -131,7 +131,7 @@ const App: React.FC = () => {
             ¿Hablamos <br/><span className="text-cyan-500">hoy?</span>
           </h2>
           <p className="text-2xl font-light text-slate-300 mb-16 italic">
-            Diagnóstico gratuito de 15 minutos. Sin compromiso.
+            Agende su sesión de 15 minutos para transformar su negocio.
           </p>
           <a 
             href={`https://wa.me/${PERSONAL_INFO.whatsapp}`}
@@ -146,9 +146,8 @@ const App: React.FC = () => {
         </motion.div>
       </section>
 
-      {/* Footer simple */}
       <footer className="py-12 border-t border-slate-900 text-center text-slate-600 text-[10px] font-black uppercase tracking-[0.5em]">
-        David Ortiz — Estrategia & IA 2024 — Illescas / Madrid
+        David Ortiz — Consultoría en IA — Illescas / Madrid
       </footer>
 
     </div>

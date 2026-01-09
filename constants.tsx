@@ -78,19 +78,19 @@ export const TESTIMONIALS = [
     name: "Elena G.",
     business: "Restaurante El Olivo",
     quote: "Antes perdíamos 10 reservas al día por no poder atender el teléfono en hora punta. Ahora la IA gestiona todo y el restaurante está siempre lleno.",
-    avatar: "https://i.pravatar.cc/150?u=47" // Mujer
+    avatar: "https://i.pravatar.cc/150?u=woman_47" 
   },
   {
     name: "Carlos M.",
     business: "Clínica Dental DentalHealth",
     quote: "La automatización de citas por WhatsApp nos ha ahorrado 20 horas de administración a la semana. Mis recepcionistas ahora se centran en el paciente.",
-    avatar: "https://i.pravatar.cc/150?u=12" // Hombre
+    avatar: "https://i.pravatar.cc/150?u=man_12"
   },
   {
     name: "Lucía R.",
     business: "Boutique Moda Urbana",
     quote: "Increíble cómo la IA responde a las dudas sobre tallas y stock a las 3 de la mañana y cierra la venta sola.",
-    avatar: "https://i.pravatar.cc/150?u=49" // Mujer
+    avatar: "https://i.pravatar.cc/150?u=woman_45"
   }
 ];
 

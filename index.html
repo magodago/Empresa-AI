@@ -4,31 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>David Ortiz - Estrategia & IA</title>
+    <title>David Ortiz | Estrategia IA</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <script>
-      // Polifill para que no falle en GitHub Pages o Vercel sin API KEY configurada
+      // Evita errores de entorno en GitHub Pages
       window.process = { env: { API_KEY: "" } };
     </script>
     <style>
-        html { scroll-behavior: smooth; }
         body {
             font-family: 'Roboto', sans-serif;
             background-color: #020617;
-            color: #f8fafc;
             margin: 0;
-            overflow-x: hidden;
+            overflow: hidden;
+            color: white;
         }
-        .glow-mesh {
-            background: radial-gradient(at 0% 0%, #051937 0, transparent 50%), 
-                        radial-gradient(at 100% 100%, #020617 0, transparent 50%);
-            background-attachment: fixed;
+        .bg-gradient-main {
+            background: radial-gradient(circle at 50% 50%, #082f49 0%, #020617 100%);
         }
     </style>
-<script type="importmap">
+    <script type="importmap">
 {
   "imports": {
     "react": "https://esm.sh/react@^19.2.3",
@@ -42,7 +39,7 @@
 }
 </script>
 </head>
-<body class="glow-mesh">
+<body class="bg-gradient-main">
     <div id="root"></div>
     <script type="module" src="index.tsx"></script>
 </body>

@@ -1,18 +1,20 @@
 
 <!DOCTYPE html>
-<html lang="es" style="overflow-x: hidden;">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>David Ortiz - IA para Negocios</title>
+    <title>David Ortiz - Consultoría IA</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script>
+      // Polifill esencial para evitar errores de 'process is not defined' en navegadores
+      window.process = { env: { API_KEY: "" } };
+    </script>
     <style>
-        :root {
-            --cyan-glow: #06b6d4;
-        }
+        :root { --cyan-glow: #06b6d4; }
         html, body {
             font-family: 'Roboto', sans-serif;
             background-color: #020617;
@@ -20,11 +22,8 @@
             margin: 0;
             padding: 0;
             width: 100%;
-            overflow-x: hidden;
-            touch-action: pan-y;
-            -webkit-text-size-adjust: 100%;
-            overscroll-behavior-y: none;
-            position: relative;
+            height: 100%;
+            overflow: hidden;
         }
 
         .shooting-star-container {
@@ -35,19 +34,17 @@
             height: 100vh;
             z-index: 0;
             pointer-events: none;
-            overflow: hidden;
             background: radial-gradient(circle at 50% 50%, #051937 0%, #020617 100%);
         }
 
         .star {
             position: absolute;
-            width: 3px;
-            height: 3px;
+            width: 2px;
+            height: 2px;
             background: #fff;
             border-radius: 50%;
-            box-shadow: 0 0 15px 2px #fff, 0 0 25px 5px #06b6d4;
             opacity: 0;
-            animation: move-star 6s linear infinite;
+            animation: move-star 8s linear infinite;
         }
 
         .star::after {
@@ -55,32 +52,25 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            width: 350px;
-            height: 2px;
-            background: linear-gradient(90deg, rgba(6, 182, 212, 0.8), transparent);
-            filter: blur(1px);
+            width: 200px;
+            height: 1px;
+            background: linear-gradient(90deg, #06b6d4, transparent);
         }
 
         @keyframes move-star {
             0% { transform: rotate(315deg) translateX(0); opacity: 0; }
-            5% { opacity: 1; }
-            15% { opacity: 1; }
-            40% { opacity: 0; transform: rotate(315deg) translateX(-1800px); }
-            100% { opacity: 0; transform: rotate(315deg) translateX(-1800px); }
+            10% { opacity: 1; }
+            30% { opacity: 0; transform: rotate(315deg) translateX(-1000px); }
+            100% { opacity: 0; }
         }
 
-        .star:nth-child(1) { top: -5%; right: 10%; animation-delay: 0s; animation-duration: 5s; }
-        .star:nth-child(2) { top: 15%; right: -5%; animation-delay: 2.5s; animation-duration: 7s; }
-        .star:nth-child(3) { top: 40%; right: 15%; animation-delay: 5s; animation-duration: 6s; }
-        .star:nth-child(4) { top: 60%; right: -10%; animation-delay: 8s; animation-duration: 8s; }
-        .star:nth-child(5) { top: 0%; right: 50%; animation-delay: 1s; animation-duration: 4s; }
-        .star:nth-child(6) { top: 80%; right: 20%; animation-delay: 11s; animation-duration: 9s; }
+        .star:nth-child(1) { top: 0%; right: 0%; animation-delay: 0s; }
+        .star:nth-child(2) { top: 20%; right: -10%; animation-delay: 3s; }
+        .star:nth-child(3) { top: 50%; right: 10%; animation-delay: 6s; }
 
         #root {
             width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            height: 100%;
             position: relative;
             z-index: 10;
         }
@@ -99,17 +89,13 @@
 }
 </script>
 </head>
-<body style="overflow-x: hidden;">
+<body>
     <div class="shooting-star-container">
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
         <div class="star"></div>
         <div class="star"></div>
         <div class="star"></div>
     </div>
     <div id="root"></div>
-    <!-- Script de entrada para cargar React -->
     <script type="module" src="index.tsx"></script>
 </body>
 </html>

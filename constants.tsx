@@ -1,60 +1,67 @@
 
 import React from 'react';
 
-// Icons used in the Slide component
-export const Icons = {
-  Brain: () => (
-    <svg className="w-16 h-16 text-cyan-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.04-2.44V7.5a2.5 2.5 0 0 1 4.5-1.5z" />
-      <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.04-2.44V7.5a2.5 2.5 0 0 0-4.5-1.5z" />
-    </svg>
-  ),
-  Rocket: () => (
-    <svg className="w-20 h-20 text-cyan-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
-      <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
-      <path d="M9 12H4s.5-1 1-4c1.5 0 3 .5 3 .5L12 9" />
-      <path d="M12 15v5s1 .5 4 1c0-1.5-.5-3-.5-3L15 12" />
-    </svg>
-  )
-};
-
-// Graphics used for data visualization in the Slide component
-export const Graphics = {
-  LossChart: () => (
-    <div className="w-full h-24 flex items-end justify-center gap-1">
-      {[40, 65, 45, 80, 55, 90, 100].map((h, i) => (
-        <div 
-          key={i} 
-          className="flex-1 bg-cyan-500/20 border-t border-cyan-500/40" 
-          style={{ height: `${h}%` }}
-        />
-      ))}
-    </div>
-  ),
-  CircularProgress: ({ value }: { value: string }) => (
-    <div className="relative w-24 h-24 flex items-center justify-center">
-      <svg className="w-full h-full -rotate-90">
-        <circle cx="48" cy="48" r="40" stroke="currentColor" strokeWidth="6" fill="transparent" className="text-slate-800" />
-        <circle 
-          cx="48" cy="48" r="40" stroke="currentColor" strokeWidth="6" fill="transparent" 
-          strokeDasharray="251.2" 
-          strokeDashoffset={251.2 - (251.2 * (parseInt(value) || 0)) / 100} 
-          strokeLinecap="round"
-          className="text-cyan-500" 
-        />
-      </svg>
-      <span className="absolute text-xl font-black text-white italic">{value}%</span>
-    </div>
-  )
-};
-
 export const PERSONAL_INFO = {
   name: "DAVID ORTIZ",
   role: "Consultor de Automatización e IA para Negocios",
   whatsapp: "34658237988", 
   whatsappDisplay: "+34 658 23 79 88",
   linkedin: "linkedin.com/in/david-ortiz-serrano-376688ab"
+};
+
+// Icons components exported for use in Slide.tsx
+export const Icons = {
+  Brain: () => (
+    <svg className="w-24 h-24 text-cyan-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .52 8.23 3 3 0 1 0 5.996.125h.007" />
+      <path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.52 8.23 3 3 0 1 1-5.996.125h-.007" />
+      <path d="M9 13a4.5 4.5 0 0 0 3 4" />
+      <path d="M15 13a4.5 4.5 0 0 1-3 4" />
+      <path d="M12 5v12" />
+    </svg>
+  ),
+  Rocket: () => (
+    <svg className="w-24 h-24 text-cyan-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2" />
+      <path d="M15 7s-1 1-1 3.5 2 4.5 2 4.5c0 0-1 1-3.5 1S8 15 8 15" />
+      <path d="M9 15c-2.5 0-3.5-1-3.5-1s-1 1-1 3.5c0 2.5 1 3.5 1 3.5s1-1 1-3.5" />
+      <path d="M12 2s-4.5 10-10 10c0 0 4.5 10 10 10s10-4.5 10-10c0-0-10-10-10-10z" />
+      <circle cx="12" cy="12" r="3" />
+    </svg>
+  )
+};
+
+// Graphics components exported for use in Slide.tsx
+export const Graphics = {
+  LossChart: () => (
+    <div className="w-full h-32 bg-slate-900/50 rounded-xl border border-slate-800 flex items-end p-4 gap-2">
+      <div className="flex-1 bg-red-500/20 h-[80%] rounded-t-lg"></div>
+      <div className="flex-1 bg-red-500/40 h-[60%] rounded-t-lg"></div>
+      <div className="flex-1 bg-red-500/60 h-[40%] rounded-t-lg"></div>
+      <div className="flex-1 bg-red-500/80 h-[20%] rounded-t-lg"></div>
+    </div>
+  ),
+  CircularProgress: ({ value }: { value: string }) => (
+    <div className="relative w-24 h-24">
+      <svg className="w-full h-full" viewBox="0 0 100 100">
+        <circle className="text-slate-800 stroke-current" strokeWidth="8" fill="transparent" r="40" cx="50" cy="50" />
+        <circle 
+          className="text-cyan-500 stroke-current" 
+          strokeWidth="8" 
+          strokeLinecap="round" 
+          fill="transparent" 
+          r="40" 
+          cx="50" 
+          cy="50" 
+          style={{ 
+            strokeDasharray: '251.2', 
+            strokeDashoffset: 251.2 - (251.2 * (parseInt(value) || 0)) / 100 
+          }} 
+        />
+      </svg>
+      <div className="absolute inset-0 flex items-center justify-center text-white font-bold text-xl italic">{value}%</div>
+    </div>
+  )
 };
 
 export const SERVICES = [
@@ -117,19 +124,19 @@ export const TESTIMONIALS = [
     name: "Elena G.",
     business: "Restaurante El Olivo",
     quote: "Antes perdíamos 10 reservas al día por no poder atender el teléfono en hora punta. Ahora la IA gestiona todo y el restaurante está siempre lleno.",
-    avatar: "https://i.pravatar.cc/150?u=women_1"
+    avatar: "https://i.pravatar.cc/150?u=woman_9" 
   },
   {
     name: "Carlos M.",
     business: "Clínica Dental DentalHealth",
     quote: "La automatización de citas por WhatsApp nos ha ahorrado 20 horas de administración a la semana. Mis recepcionistas ahora se centran en el paciente.",
-    avatar: "https://i.pravatar.cc/150?u=men_1"
+    avatar: "https://i.pravatar.cc/150?u=man_2"
   },
   {
     name: "Lucía R.",
     business: "Boutique Moda Urbana",
     quote: "Increíble cómo la IA responde a las dudas sobre tallas y stock a las 3 de la mañana y cierra la venta sola.",
-    avatar: "https://i.pravatar.cc/150?u=women_2"
+    avatar: "https://i.pravatar.cc/150?u=woman_3"
   }
 ];
 

@@ -27,7 +27,6 @@
             position: relative;
         }
 
-        /* Estrellas Fugaces - Rediseño de Alta Visibilidad */
         .shooting-star-container {
             position: fixed;
             top: 0;
@@ -56,7 +55,7 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            width: 350px; /* Estela más larga */
+            width: 350px;
             height: 2px;
             background: linear-gradient(90deg, rgba(6, 182, 212, 0.8), transparent);
             filter: blur(1px);
@@ -70,7 +69,6 @@
             100% { opacity: 0; transform: rotate(315deg) translateX(-1800px); }
         }
 
-        /* Posiciones variadas para las estrellas */
         .star:nth-child(1) { top: -5%; right: 10%; animation-delay: 0s; animation-duration: 5s; }
         .star:nth-child(2) { top: 15%; right: -5%; animation-delay: 2.5s; animation-duration: 7s; }
         .star:nth-child(3) { top: 40%; right: 15%; animation-delay: 5s; animation-duration: 6s; }
@@ -93,8 +91,10 @@
     "react": "https://esm.sh/react@^19.2.3",
     "react/": "https://esm.sh/react@^19.2.3/",
     "@google/genai": "https://esm.sh/@google/genai@^1.35.0",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "framer-motion": "https://esm.sh/framer-motion@^11.11.11"
+    "react-dom": "https://esm.sh/react-dom@^19.2.3",
+    "react-dom/client": "https://esm.sh/react-dom@^19.2.3/client",
+    "framer-motion": "https://esm.sh/framer-motion@^11.11.11",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
   }
 }
 </script>
@@ -109,5 +109,7 @@
         <div class="star"></div>
     </div>
     <div id="root"></div>
+    <!-- Script de entrada para cargar React -->
+    <script type="module" src="index.tsx"></script>
 </body>
 </html>

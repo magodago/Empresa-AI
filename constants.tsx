@@ -34,6 +34,35 @@ export const Graphics = {
       <div className="w-12 bg-red-500/50 h-3/4 rounded-t-lg border-t border-red-500/80"></div>
       <div className="w-12 bg-red-600 h-full rounded-t-lg shadow-[0_0_30px_rgba(239,68,68,0.3)]"></div>
     </div>
+  ),
+  // Added CircularProgress to Graphics object
+  CircularProgress: ({ value }: { value: string }) => (
+    <div className="relative w-24 h-24 flex items-center justify-center">
+      <svg className="w-full h-full -rotate-90" viewBox="0 0 100 100">
+        <circle
+          cx="50"
+          cy="50"
+          r="40"
+          stroke="currentColor"
+          strokeWidth="8"
+          fill="transparent"
+          className="text-slate-800"
+        />
+        <circle
+          cx="50"
+          cy="50"
+          r="40"
+          stroke="currentColor"
+          strokeWidth="8"
+          fill="transparent"
+          strokeDasharray="251.2"
+          strokeDashoffset={251.2 * (1 - (parseInt(value) || 0) / 100)}
+          className="text-cyan-500"
+          strokeLinecap="round"
+        />
+      </svg>
+      <span className="absolute text-xl font-black text-white italic">{value}%</span>
+    </div>
   )
 };
 
